@@ -279,7 +279,7 @@ const ApplicationPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(applicant)
-        if (!applicant.firstname || !applicant.lastname || !applicant.email || !applicant.dob ||!applicant.ssn ||!dlback ||!dlfront ||!approved) {
+        if (!applicant.firstname || !applicant.lastname || !applicant.email || !applicant.dob ||!applicant.ssn ||!dlback ||!dlfront ||!approved ||!applicant.phone) {
          return message.error("Please fill all required fields")
         }
 
@@ -385,17 +385,15 @@ const ApplicationPage = () => {
         {/* <!-- End Col --> */}
 
         <div class="sm:col-span-9">
-          <input placeholder="Phone number"  type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500   "/>
+          <input onChange={(e) => {
+                setapplicant(prev => {
+                return {
+                    ...prev,
+                    phone:e.target.value
+                }
+                })
+            }} placeholder="Phone number"  type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500   "/>
 
-          {/* <p class="mt-3">
-            <a class="inline-flex items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium" href="../docs/index.html">
-              <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-              </svg>
-              Add phone
-            </a>
-          </p> */}
         </div>
         {/* <!-- End Col --> */}
 
