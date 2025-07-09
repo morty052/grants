@@ -1,46 +1,54 @@
-import {NavLink} from "react-router-dom"
-import { client } from "../lib/client"
-import {useState} from "react"
-import {message} from "antd"
+import { NavLink } from "react-router-dom";
+import { client } from "../lib/client";
+import { useState } from "react";
+import { message } from "antd";
+import { logoWhite } from "../assets";
 
 const Footer = () => {
-  const [email, setemail] = useState("")
+  const [email, setemail] = useState("");
 
   const handleNewsletter = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const doc = {
-      _type:"applicants",
-      email:email
+      _type: "applicants",
+      email: email,
+    };
+
+    if (!email.includes("@")) {
+      return message.error("Please enter a valid email");
     }
 
-    if(!email.includes('@')){
-      return message.error("Please enter a valid email")
-    }
-
-    client.create(doc).then(res => {
-      console.log(res)
-      message.success("Subscribed to our Newsletter")
-      setemail("")
-    })
-  }
-
+    client.create(doc).then((res) => {
+      console.log(res);
+      message.success("Subscribed to our Newsletter");
+      setemail("");
+    });
+  };
 
   return (
     <>
-    <footer class="bg-gray-900">
-  <div class="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">
-    {/* <!-- Grid --> */}
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-      <div class="col-span-full lg:col-span-1">
-        {/* <a class="flex-none text-xl font-semibold text-white" href="#" aria-label="Brand">Brand</a> */}
-        <div className="flex items-center">
-      <a className="bg-transparent  self-start rounded-full h-10 w-10 border border-blue-600 "></a>
-      <NavLink to={'/'} className=" -ml-4 whitespace-nowrap  text-xl font-semibold text-blue-600" href="#" aria-label="Brand">Platinum Grants</NavLink>
-      </div>
-      </div>
-      {/* <!-- End Col --> */}
+      <footer className="bg-gray-900">
+        <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">
+          {/* <!-- Grid --> */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <div className="col-span-full lg:col-span-1">
+              {/* <a class="flex-none text-xl font-semibold text-white" href="#" aria-label="Brand">Brand</a> */}
+              <div className="flex items-center">
+                {/* <a className="bg-transparent  self-start rounded-full h-10 w-10 border border-blue-600 "></a> */}
+                <NavLink
+                  to={"/"}
+                  className="  whitespace-nowrap  text-xl font-semibold text-blue-600"
+                  href="#"
+                  aria-label="Brand"
+                >
+                  {/* Platinum Grants */}
+                  <img className="w-40" src={logoWhite} alt="" />
+                </NavLink>
+              </div>
+            </div>
+            {/* <!-- End Col --> */}
 
-      {/* <div class="col-span-1">
+            {/* <div class="col-span-1">
         <h4 class="font-semibold text-gray-100">Product</h4>
 
         <div class="mt-3 grid space-y-3">
@@ -49,50 +57,73 @@ const Footer = () => {
           <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200" href="#">Docs</a></p>
         </div>
       </div> */}
-      {/* <!-- End Col --> */}
+            {/* <!-- End Col --> */}
 
-      <div class="col-span-1">
-        <h4 class="font-semibold text-gray-100">Company</h4>
+            <div className="col-span-1">
+              <h4 className="font-semibold text-gray-100">Company</h4>
 
-        <div class="mt-3 grid space-y-3">
-          <p><NavLink to={'/aboutus'} className="inline-flex gap-x-2 text-white hover:text-gray-200" >About us</NavLink></p>
-          {/* <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200" href="#">Blog</a></p> */}
-          {/* <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200" href="#">Careers</a> <span class="inline ml-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-md">We're hiring</span></p>
+              <div className="mt-3 grid space-y-3">
+                <p>
+                  <NavLink
+                    to={"/aboutus"}
+                    className="inline-flex gap-x-2 text-white hover:text-gray-200"
+                  >
+                    About us
+                  </NavLink>
+                </p>
+                {/* <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200" href="#">Blog</a></p> */}
+                {/* <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200" href="#">Careers</a> <span class="inline ml-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-md">We're hiring</span></p>
           <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200" href="#">Customers</a></p> */}
-        </div>
-      </div>
-      {/* <!-- End Col --> */}
-
-      <div class="col-span-2">
-        <h4 class="font-semibold text-gray-100">Stay up to date</h4>
-
-        <form>
-          <div class="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-md p-2">
-            <div class="w-full">
-              <label for="hero-input" class="sr-only">Search</label>
-              <input value={email} onChange={(e) => setemail(e.target.value)} type="text" id="hero-input" name="hero-input" class="py-3 px-4 block w-full border-transparent shadow-sm rounded-md focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="Enter your email"/>
+              </div>
             </div>
-            <a onClick={e => handleNewsletter(e)} class="w-full sm:w-auto whitespace-nowrap inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4" href="#">
-              Subscribe
-            </a>
+            {/* <!-- End Col --> */}
+
+            <div className="col-span-2">
+              <h4 className="font-semibold text-gray-100">Stay up to date</h4>
+
+              <form>
+                <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-md p-2">
+                  <div className="w-full">
+                    <label htmlFor="hero-input" className="sr-only">
+                      Search
+                    </label>
+                    <input
+                      value={email}
+                      onChange={(e) => setemail(e.target.value)}
+                      type="text"
+                      id="hero-input"
+                      name="hero-input"
+                      className="py-3 px-4 block w-full border-transparent shadow-sm rounded-md focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <a
+                    onClick={(e) => handleNewsletter(e)}
+                    className="w-full sm:w-auto whitespace-nowrap inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4"
+                    href="#"
+                  >
+                    Subscribe
+                  </a>
+                </div>
+                <p className="mt-3 text-sm text-gray-400">
+                  Get alerts if you qualify for new grants.
+                </p>
+              </form>
+            </div>
+            {/* <!-- End Col --> */}
           </div>
-          <p class="mt-3 text-sm text-gray-400">
-            Get alerts if you qualify for new grants.
-          </p>
-        </form>
-      </div>
-      {/* <!-- End Col --> */}
-    </div>
-    {/* <!-- End Grid --> */}
+          {/* <!-- End Grid --> */}
 
-    <div class="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
-      <div class="flex justify-between items-center">
-        <p class="text-sm text-gray-400">© 2021 Platinum Grants. All rights reserved.</p>
-      </div>
-      {/* <!-- End Col --> */}
+          <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
+            <div className="flex justify-between items-center">
+              <p className="text-sm text-gray-400">
+                © 2021 Platinum Grants. All rights reserved.
+              </p>
+            </div>
+            {/* <!-- End Col --> */}
 
-      {/* <!-- Social Brands --> */}
-      {/* <div>
+            {/* <!-- Social Brands --> */}
+            {/* <div>
         <a class="inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-200 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition" href="#">
           <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
             <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
@@ -119,12 +150,12 @@ const Footer = () => {
           </svg>
         </a>
       </div> */}
-      {/* <!-- End Social Brands --> */}
-    </div>
-  </div>
-</footer>
+            {/* <!-- End Social Brands --> */}
+          </div>
+        </div>
+      </footer>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
