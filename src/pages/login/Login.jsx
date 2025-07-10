@@ -1,4 +1,4 @@
-import { logo } from "../../assets";
+// import { logo } from "../../assets";
 import { useState } from "react";
 import { message } from "antd";
 
@@ -37,12 +37,15 @@ const Login = () => {
           <div className="rounded-3xl border border-gray-100  bg-white  shadow-2xl shadow-gray-600/10 ">
             <div className="p-8 py-12 sm:p-16">
               <div className="space-y-4">
-                <img
+                {/* <img
                   src={logo}
                   loading="lazy"
                   className="w-20"
                   alt="tailus logo"
-                />
+                /> */}
+                <h1 className="text-xl font-bold text-blue-600">
+                  Idle savings
+                </h1>
                 <h2 className="mb-8 sm:text-xl font-bold text-gray-800 ">
                   Sign in to your account.
                 </h2>
