@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { grantshero, undp } from "../../assets";
+import { grantshero } from "../../assets";
 
 const Hero = () => {
   return (
@@ -10,12 +10,11 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div>
             <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight ">
-              Platinum <span className="text-blue-600">Grants</span>
+              Idle <span className="text-blue-600">Savings</span>
             </h1>
             <p className="mt-3 text-lg text-gray-800 ">
-              Achievable grants designed to bring you further to your dreams.
-              <br />
-              brought to you by Platinum grants.
+              A modern platform to grow your wealth with the least possible
+              effort from you
             </p>
 
             {/* <!-- Buttons --> */}
@@ -24,7 +23,7 @@ const Hero = () => {
                 to={"/application"}
                 className="inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 "
               >
-                Get started
+                Book Demo
                 <svg
                   className="w-2.5 h-2.5"
                   width="16"
@@ -50,7 +49,7 @@ const Hero = () => {
             {/* <!-- End Buttons --> */}
 
             {/* <!-- Review --> */}
-            <div className="mt-6 lg:mt-10  gap-x-5">
+            {/* <div className="mt-6 lg:mt-10  gap-x-5">
               <span className="text-xs font-medium text-gray-800 uppercase px-2 ">
                 Sponsored by:
               </span>
@@ -61,7 +60,7 @@ const Hero = () => {
                   Development Programme
                 </h3>
               </div>
-            </div>
+            </div> */}
             {/* <!-- End Review --> */}
           </div>
           {/* <!-- End Col --> */}

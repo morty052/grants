@@ -1,8 +1,7 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { logoWhite } from "../assets";
+import { NavLink } from "react-router-dom";
+// import { logoWhite } from "../assets";
 
 const Navbar = () => {
-  const path = useLocation().pathname;
   return (
     <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-blue-600 border-b border-white/[.5] text-sm py-3 sm:py-0">
       <nav
@@ -19,7 +18,8 @@ const Navbar = () => {
               aria-label="Brand"
             >
               {/* Platinum Grants */}
-              <img className="w-40" src={logoWhite} alt="" />
+              <h1>Idle Savings</h1>
+              {/* <img className="w-40" src={logoWhite} alt="" /> */}
             </NavLink>
           </div>
           {/* <img src={logo} className="w-0" alt="" /> */}
@@ -72,19 +72,19 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to={"/aboutus"}
               data-hs-collapse="#navbar-collapse-with-animation"
               className="font-medium text-white/[.8] hover:text-white sm:py-6 hs-collapse-toggle "
               href="#"
             >
               About Us
-            </NavLink>
+            </NavLink> */}
             {/* <a className="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">Work</a>
         <a className="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">Blog</a> */}
 
             {/* POPOVER */}
-            <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
+            {/* <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
               {!path.includes("/application") && (
                 <NavLink to={"/application"}>
                   <button
@@ -111,41 +111,7 @@ const Navbar = () => {
                   </button>
                 </NavLink>
               )}
-
-              {/* POP OVER CHILDREN */}
-              {/* <div className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 sm:w-48 hidden z-10 bg-white sm:shadow-md rounded-lg p-2 dark:bg-gray-800 sm:dark:border dark:border-gray-700 dark:divide-gray-700 before:absolute top-full sm:border before:-top-5 before:left-0 before:w-full before:h-5">
-            <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="#">
-              About
-            </a>
-            <div className="hs-dropdown relative [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover]">
-              <button type="button" className="w-full flex justify-between w-full items-center text-sm text-gray-800 rounded-md py-2 px-3 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
-                Sub Menu
-                <svg className="sm:-rotate-90 ml-2 w-2.5 h-2.5 text-gray-600" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-                </svg>
-              </button>
-
-              <div className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 sm:w-48 hidden z-10 sm:mt-2 bg-white sm:shadow-md rounded-lg p-2 dark:bg-gray-800 sm:dark:border dark:border-gray-700 dark:divide-gray-700 before:absolute sm:border before:-right-5 before:top-0 before:h-full before:w-5 top-0 right-full !mx-[10px]">
-                <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="#">
-                  About
-                </a>
-                <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="#">
-                  Downloads
-                </a>
-                <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="#">
-                  Team Account
-                </a>
-              </div>
-            </div>
-
-            <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="#">
-              Downloads
-            </a>
-            <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="#">
-              Team Account
-            </a>
-          </div> */}
-            </div>
+            </div> */}
 
             {/* {Login Button} */}
             <NavLink

@@ -9,6 +9,7 @@ import wingard from "./wingard.jpg";
 import hans from "./hans.jpg";
 import pgt from "./pgt.png";
 import logoWhite from "./logo white.png";
+import couple from "./couple.jpg";
 
 export {
   undp,
@@ -22,4 +23,5 @@ export {
   hans,
   pgt,
   logoWhite,
+  couple,
 };
