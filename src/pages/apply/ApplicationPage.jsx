@@ -1,5 +1,5 @@
-import ListBox from "./ListBox";
-import { undp } from "../../assets";
+// import ListBox from "./ListBox";
+// import { undp } from "../../assets";
 import { useState } from "react";
 // import { client } from "../../lib/client";
 import { message } from "antd";
@@ -7,21 +7,21 @@ import { Footer } from "../../components";
 import { applyhero } from "../../assets";
 
 const ApplicationPage = () => {
-  const list = [
-    { name: "Select Grant Type" },
-    { name: "Educational Grant" },
-    { name: "Business Grant" },
-    { name: "Healthcare Grant" },
-    { name: "Personal Grant" },
-    { name: "Home Development Grant" },
-  ];
+  // const list = [
+  //   { name: "Select Grant Type" },
+  //   { name: "Educational Grant" },
+  //   { name: "Business Grant" },
+  //   { name: "Healthcare Grant" },
+  //   { name: "Personal Grant" },
+  //   { name: "Home Development Grant" },
+  // ];
 
-  const genders = [
-    { name: "Select Gender" },
-    { name: "Female" },
-    { name: "Male" },
-    { name: "I rather not say" },
-  ];
+  // const genders = [
+  //   { name: "Select Gender" },
+  //   { name: "Female" },
+  //   { name: "Male" },
+  //   { name: "I rather not say" },
+  // ];
 
   // const accounts = [{ name: "Checking" }, { name: "Savings" }];
 
@@ -41,29 +41,25 @@ const ApplicationPage = () => {
           <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
             <div className="lg:col-span-3">
               <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl  ">
-                Apply for a grant.
+                Book A Demo.
               </h1>
               <p className="mt-3 text-lg text-gray-800 ">
-                Unlock you true potential with Platinum grants. <br /> designed
-                to help you achieve.
+                Unlock unlimited investment potential with Idle Savings.{" "}
               </p>
 
-              <div
+              {/* <div
                 id="applybutton"
                 className="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3"
               >
-                {/* <div className="w-full sm:w-auto">
-                  <ListBox active={grant} setActive={setGrant} list={list} />
-                </div> */}
                 <a
                   href="#applicationform"
                   className="w-full sm:w-auto inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 "
                 >
                   Apply Now
                 </a>
-              </div>
+              </div> */}
 
-              <div className=" mt-6 lg:mt-12">
+              {/* <div className=" mt-6 lg:mt-12">
                 <span className="text-xs font-medium text-gray-800 uppercase px-2 ">
                   Sponsored by:
                 </span>
@@ -74,11 +70,11 @@ const ApplicationPage = () => {
                     Development Programme
                   </h3>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* <!-- End Col --> */}
 
-            <div className="lg:col-span-4 mt-10 lg:mt-0">
+            <div className="lg:col-span-4 mt-4 lg:mt-0">
               <img
                 className="w-full rounded-xl"
                 src={applyhero}
@@ -114,10 +110,10 @@ const ApplicationPage = () => {
       ssn: "",
       dob: "",
     });
-    const [grant, setgrant] = useState("");
-    const [gender, setGender] = useState("");
+    // const [grant, setgrant] = useState("");
+    // const [gender, setGender] = useState("");
     // const [paymentMethod, setPaymentMethod] = useState("");
-    const [approved, setapproved] = useState(false);
+    // const [approved, setapproved] = useState(false);
     // eslint-disable-next-line no-unused-vars
     const [submitting, setSubmitting] = useState(false);
     // const [submittedFront, setsubmittedFront] = useState(false);
@@ -453,14 +449,14 @@ const ApplicationPage = () => {
         !applicant.firstname ||
         !applicant.lastname ||
         !applicant.email ||
-        !applicant.street ||
-        !applicant.state ||
-        !applicant.zip ||
+        // !applicant.street ||
+        // !applicant.state ||
+        // !applicant.zip ||
         // !applicant.dob ||
         // !applicant.ssn ||
         // !dlback ||
         // !dlfront ||
-        !approved ||
+        // !approved ||
         !applicant.phone
       ) {
         return message.error("Please fill all required fields");
@@ -484,22 +480,19 @@ const ApplicationPage = () => {
         <div className="grid  items-center gap-4">
           <div className="relative">
             {/* <!-- Card --> */}
-            <div
-              id="applicationform"
-              className="pt-4 sm:pt-8 sm:px-12 lg:px-16 sm:py-8"
-            >
-              <h1 className="text-3xl text-center font-semibold">
+            <div id="applicationform" className="8 sm:px-12 lg:px-16 sm:py-8">
+              {/* <h1 className="text-3xl text-center font-semibold">
                 Start Application
-              </h1>
-              <p className="mt-1 text-xs text-center text-gray-700 sm:text-base leading-tight ">
-                To apply for a Grant you must be above 18 years old.{" "}
-                <br className="hidden sm:block" /> Fill out required information
-                including grant type, to begin your application process.
-              </p>
+              </h1> */}
+              {/* <p className="mt-1 text-xs text-center text-gray-700 sm:text-base leading-tight ">
+                To book a Demo you must be above 18 years old.{" "}
+                <br className="hidden sm:block" /> by filling out this
+                application you certify you are over 18.
+              </p> */}
             </div>
 
             {/* form */}
-            <div className="max-w-4xl px-4 py-4 sm:px-6 lg:px-8  mx-auto ">
+            <div className="max-w-3xl px-4 py-4 sm:px-6 lg:px-8  mx-auto ">
               {/* <!-- Card --> */}
               <div className="bg-white rounded-xl shadow p-4 sm:p-7 ">
                 <form>
@@ -508,17 +501,17 @@ const ApplicationPage = () => {
                     <div className="sm:col-span-12">
                       <div className="flex flex-col  items-center sm:flex-row sm:justify-between">
                         <h2 className="text-sm font-semibold text-gray-800 ">
-                          Submit your application.
+                          Please fill out the following information.
                         </h2>
-                        <h2 className="text-xs font-semibold text-gray-600 ">
+                        {/* <h2 className="text-xs font-semibold text-gray-600 ">
                           Fields Marked with{" "}
                           <span className="text-red-600">*</span> are required.
-                        </h2>
+                        </h2> */}
                       </div>
                     </div>
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-3">
+                    {/* <div className="sm:col-span-3">
                       <div className="inline-block">
                         <label
                           htmlFor="af-submit-application-current-company"
@@ -527,17 +520,17 @@ const ApplicationPage = () => {
                           Grant type <span className="text-red-600">*</span>
                         </label>
                       </div>
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-9">
+                    {/* <div className="sm:col-span-9">
                       <ListBox
                         active={grant}
                         setActive={setgrant}
                         list={list}
                         z={"z-50"}
                       />
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
                     <div className="sm:col-span-3">
@@ -638,7 +631,7 @@ const ApplicationPage = () => {
                     </div>
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-3">
+                    {/* <div className="sm:col-span-3">
                       <div className="inline-block">
                         <label
                           htmlFor="af-submit-application-current-company"
@@ -647,38 +640,38 @@ const ApplicationPage = () => {
                           Gender
                         </label>
                       </div>
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-9">
+                    {/* <div className="sm:col-span-9">
                       <ListBox
                         z={"z-[80]"}
                         active={gender}
                         setActive={setGender}
                         list={genders}
                       />
-                    </div>
+                    </div> */}
                   </div>
                   {/* <!-- End Section --> */}
 
                   {/* <!--Address Section --> */}
-                  <div className="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 ">
-                    <div className="sm:col-span-12">
+                  <div className="grid sm:grid-cols-12 gap-2 sm:gap-4 pt-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 ">
+                    {/* <div className="sm:col-span-12">
                       <h2 className="text-lg font-semibold text-gray-800 ">
                         Address Information{" "}
                         <span className="text-red-600">*</span>
                       </h2>
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-3">
+                    {/* <div className="sm:col-span-3">
                       <label className="inline-block text-sm font-medium text-gray-500 mt-2.5">
                         Street Address <span className="text-red-600">*</span>
                       </label>
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-9">
+                    {/* <div className="sm:col-span-9">
                       <input
                         onChange={(e) => {
                           setapplicant((prev) => {
@@ -691,28 +684,28 @@ const ApplicationPage = () => {
                         type="text"
                         className="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500   "
                       />
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-3">
+                    {/* <div className="sm:col-span-3">
                       <label
                         htmlFor="af-submit-application-twitter-url"
                         className="inline-block text-sm font-medium text-gray-500 mt-2.5"
                       >
                         Adddress line 2
                       </label>
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
-                    <div className="sm:col-span-9">
+                    {/* <div className="sm:col-span-9">
                       <input
                         type="text"
                         className="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500   "
                       />
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
-                    <div className="  items-center  gap-x-4 grid grid-cols-6 grid-flow-row sm:grid-cols-9 sm:col-start-4 sm:col-span-9  ">
+                    {/* <div className="  items-center  gap-x-4 grid grid-cols-6 grid-flow-row sm:grid-cols-9 sm:col-start-4 sm:col-span-9  ">
                       <div className="col-span-6 sm:col-span-3">
                         <label className="inline-block text-sm font-medium text-gray-500 mt-2.5">
                           City
@@ -746,8 +739,6 @@ const ApplicationPage = () => {
                           type="text"
                           className="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500   "
                         />
-
-                        {/* <ListBox list={states}/> */}
                       </div>
                       <div className="col-span-3">
                         <label className="inline-block text-sm font-medium text-gray-500 mt-2.5">
@@ -766,7 +757,7 @@ const ApplicationPage = () => {
                           className="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500   "
                         />
                       </div>
-                    </div>
+                    </div> */}
                     {/* <!-- End Col --> */}
 
                     {/* <div class="sm:col-span-9">
@@ -811,30 +802,17 @@ const ApplicationPage = () => {
                   {/* <!-- End Section --> */}
 
                   {/* <!-- Section --> */}
-                  <div className="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 ">
+                  {/* <div className="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 ">
                     <div className="sm:col-span-12">
                       <h2 className="text-lg font-semibold text-gray-800 ">
                         Before sending your application, please let us know...
                       </h2>
                     </div>
-
-                    {/* <!-- End Col --> */}
-                    {/* <!-- End Col --> */}
-                  </div>
+                  </div> */}
                   {/* <!-- End Section --> */}
 
                   {/* <!-- Section --> */}
-                  <div className="pt-2 pb-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 ">
-                    {/* <h2 class="text-lg font-semibold text-gray-800 ">
-          Submit application
-        </h2> */}
-                    <p className="mt-3 text-sm text-gray-600 ">
-                      In order to process your application, we may need to
-                      verify your personal data.
-                    </p>
-                    {/* <p class="mt-2 text-sm text-gray-600 ">
-          If you are happy for us to do so please click the checkbox below.
-        </p> */}
+                  {/* <div className=" first:pt-0 last:pb-0  border-gray-200 ">
                     <div className="mt-5 flex">
                       <input
                         value={approved}
@@ -851,7 +829,7 @@ const ApplicationPage = () => {
                       </label>{" "}
                       <span className="text-red-600">*</span>
                     </div>
-                  </div>
+                  </div> */}
                   {/* <!-- End Section --> */}
 
                   <button
@@ -859,7 +837,7 @@ const ApplicationPage = () => {
                     type="button"
                     className="py-3 px-4 w-full inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm "
                   >
-                    {!submitting ? "Submit application" : "Submitting..."}
+                    {!submitting ? "Book Demo" : "Booking..."}
                   </button>
                 </form>
               </div>
